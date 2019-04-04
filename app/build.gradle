@@ -1,0 +1,163 @@
+apply plugin: 'com.android.application'
+//TODO uncomment line below after adding fabric api secret and key to fabric.properties
+//apply plugin: 'io.fabric'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.app.smt.shiper"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    signingConfigs {
+        debug {
+            keyAlias 'android'
+            keyPassword 'android'
+            storeFile file('../travisutils/debug.keystore')
+            storePassword 'tuanht'
+        }
+        release {
+            keyAlias 'caro'
+            keyPassword 'caro@2019'
+            storeFile file('../travisutils/release.jks')
+            storePassword 'caro@2019'
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            buildConfigField("String", "URL_AVATAR", "\"https://uat.carotech.info/\"")
+            buildConfigField("String", "BASE_URL", "\"https://uat.carotech.info/\"")
+            buildConfigField("String", "GOOGLE_MAP_URL", "\"https://maps.googleapis.com/maps/\"")
+            buildConfigField("String", "SOCKET_URL", "\"https://uat.carotech.info\"")
+
+            resValue "string", "app_name", "Shipper Debug"
+            resValue "string", "google_maps_key", "AIzaSyATAMKIvrFduEFvDkm3TCtRZ7ZzrOnUdAk"
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            buildConfigField("String", "URL_AVATAR", "\"https://uat.carotech.info/\"")
+            buildConfigField("String", "BASE_URL", "\"https://uat.carotech.info/\"")
+            buildConfigField("String", "GOOGLE_MAP_URL", "\"https://maps.googleapis.com/maps/\"")
+            buildConfigField("String", "SOCKET_URL", "\"https://uat.carotech.info\"")
+
+            resValue "string", "app_name", "Shipper"
+            resValue "string", "google_maps_key", "AIzaSyATAMKIvrFduEFvDkm3TCtRZ7ZzrOnUdAk"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    // android support libraries
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-media-compat:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-annotations:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:animated-vector-drawable:$rootProject.supportLibraryVersion"
+
+    // firebase
+    implementation "com.google.firebase:firebase-messaging:$rootProject.firebaseVersion"
+
+    // goolge map
+    implementation "com.google.android.gms:play-services-maps:$rootProject.playServicesVersion"
+    implementation "com.google.android.gms:play-services-location:$rootProject.playServicesVersion"
+    implementation "com.google.android.gms:play-services-auth:$rootProject.playServicesVersion"
+
+    // dependency injection
+    implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    implementation 'javax.inject:javax.inject:1'
+
+    //compileOnly 'org.glassfish:javax.annotation:10.0-b28' //Required by Dagger2
+
+    // reactive
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttpVersion"
+
+    // Gson
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    // Autovalue Replace provided dependency below with official AutoValue once this issue is fixed
+    compileOnly "com.jakewharton.auto.value:auto-value-annotations:$rootProject.autoValueVersion"
+    compileOnly "com.ryanharter.auto.value:auto-value-gson:$rootProject.autoValueGsonVersion"
+    compileOnly "com.google.auto.value:auto-value:$rootProject.autoValueVersion"
+    annotationProcessor "com.google.auto.value:auto-value:$rootProject.autoValueVersion"
+    annotationProcessor 'com.ryanharter.auto.value:auto-value-parcel:0.2.4-rc2'
+    annotationProcessor "com.ryanharter.auto.value:auto-value-gson:$rootProject.autoValueGsonVersion"
+    annotationProcessor 'com.squareup:javapoet:1.11.0'
+
+    // font
+    implementation "uk.co.chrisjenx:calligraphy:$rootProject.calligraphyVersion"
+
+    // database Room
+    implementation "android.arch.persistence.room:runtime:$rootProject.roomVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.roomVersion"
+
+    // image
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+
+    //take picture
+    implementation "com.github.jkwiecien:EasyImage:$rootProject.libTakePicture"
+
+    // event bus
+    implementation "org.greenrobot:eventbus:$rootProject.eventBusVersion"
+
+    // code generator for view
+    implementation "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
+
+    // logger
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    // socket io
+    implementation ('io.socket:socket.io-client:1.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    // crashlytics
+    implementation('com.crashlytics.sdk.android:crashlytics:2.5.7@aar') {
+        transitive = true;
+    }
+
+    // account kit
+    implementation "com.facebook.android:account-kit-sdk:$rootProject.accountKitVersion"
+
+    implementation "de.hdodenhof:circleimageview:$rootProject.circleImageViewVersion"
+    implementation "com.loopeer.library:itemtouchhelperextension:$rootProject.itemtouchhelperextension"
+
+    // dependencies for local unit tests
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+
+    // UI Testing
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
+    androidTestImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.testRunner"
+    androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+}
+
+apply plugin: 'com.google.gms.google-services'

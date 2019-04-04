@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="bgBottomNavigation">#ffffff</color>
+
+    <color name="black_effective">#2a2a2a</color>
+    <color name="white">#ffffff</color>
+    <color name="blue">#3366ff</color>
+    <color name="pink">#ff00cd</color>
+    <color name="purple">#8b37fe</color>
+    <color name="gray">#999999</color>
+    <color name="grey">#666666</color>
+    <color name="black">#000000</color>
+    <color name="orange">#ff9700</color>
+    <color name="green">#3a97d3</color>
+    <color name="color_bg_history">#f3f3f9</color>
+
+    <color name="blue_promo">#2c2a68</color>
+    <color name="blue_des">#2b2a64</color>
+    <color name="gray_promo">#aaaaaa</color>
+    <color name="caro_gray_100">#f4f4f4</color>
+
+    <color name="btn_disable_color">#0c000000</color>
+    <color name="color_line">#d8d8e4</color>
+
+    <color name="caro_blue_btn_100">#9530ff</color>
+    <color name="caro_blue_btn_150">#871cf8</color>
+    <color name="caro_blue_btn_200">#8110f9</color>
+
+    <color name="color_draw_route">#8b37fe</color>
+</resources>

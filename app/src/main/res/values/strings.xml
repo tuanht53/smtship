@@ -1,0 +1,370 @@
+<resources>
+    <string name="title_home">Trang chủ</string>
+    <string name="title_dashboard">Yêu </string>
+    <string name="title_notifications">Khuyến </string>
+
+    <!--    Permissions    -->
+    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="permission_required_toast">Location permission is required for this demo.</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="default_notification_channel_name" translatable="true">Caro</string>
+
+    <!--account kit-->
+    <string name="FACEBOOK_APP_ID">455712164964058</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">7fe524aae88dce96ce5c5704d0463c07</string>
+    <string name="permissions_read_phone_state_message">
+        Grant permission to read your phone number from your device to pre-fill.
+    </string>
+    <string name="permissions_read_phone_state_title">Read Phone Number</string>
+    <string name="permissions_receive_sms_message">
+        Grant permission to read your SMS code from your device to pre-fill.
+    </string>
+    <string name="permissions_receive_sms_title">Read SMS Code</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_photos">Photos</string>
+    <string name="nav_movies">Movies</string>
+    <string name="nav_notifications">Notifications</string>
+    <string name="nav_settings">Menu</string>
+    <string name="nav_about_us">About Us</string>
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>Home</item>
+        <item>Photos</item>
+        <item>Movies</item>
+        <item>Notifications</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string name="activity_title_about_us">About Us</string>
+    <string name="activity_title_privacy_policy">Privacy Policy</string>
+    <string name="action_clear_all">Clear All</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_mark_all_read">Mark All as Read</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+    <string name="dialog_action_ok">OK</string>
+    <string name="dialog_action_cancel">Cancel</string>
+    <string name="dialog_error_title">Sorry</string>
+
+    <string name="empty_ribots">There aren\'t any ribots</string>
+    <string name="error_loading_ribots">There was a problem loading the ribots</string>
+    <string name="some_error">Some Error Occurred!</string>
+
+    <!--play store-->
+    <string name="app_google_play_store_link">"https://play.google.com/store/apps/details?id="</string>
+    <string name="app_market_link">"market://details?id="</string>
+
+    <string name="api_default_error">Lỗi kết nối</string>
+    <string name="api_retry_error">Lỗi kết nối</string>
+    <string name="connection_error">Kết nối có vấn đề</string>
+
+    <string name="pick_up_location_hint">Chọn điểm đón</string>
+    <string name="drop_off_location_hint">Chọn điểm đến</string>
+    <string name="btn_car">Đặt xe</string>
+    <string name="btn_ware_car">Vẫy xe</string>
+    <string name="btn_select_address">Chọn Điểm</string>
+
+    <string name="finding_location">Đang lấy vị trí&#8230;</string>
+    <string name="finding_location_error">Không lấy được địa chỉ</string>
+    <string name="search_address_hint">Nhập địa chỉ</string>
+    <string name="finding_location_on_map">Chọn địa điểm trên bản đồ</string>
+
+    <string name="pick_car">CHỌN XE</string>
+    <string name="promotion">Khuyến mại</string>
+    <string name="note">Ghi chú</string>
+
+    <string name="route_title">Lộ trình</string>
+    <string name="edit_pick_caro">Chỉnh sửa đặt xe</string>
+    <string name="pick_caro_type">Đặt xe CARO 4 chỗ</string>
+    <string name="state_findding_driver">Đang tìm tài xế ở gần chỗ bạn..</string>
+    <string name="state_find_driver">Đã tìm tài xế ở gần bạn..</string>
+
+    <string name="btn_status_finish">Hoàn thành</string>
+    <string name="btn_status_cancel">Huỷ chuyến</string>
+    <string name="btn_rating">Kết thúc</string>
+
+    <string name="text_ware_description">Bạn có muốn vẫy xe nhanh?</string>
+
+    <string name="type_caro_4">Xe 4 chỗ</string>
+    <string name="type_caro_7">Xe 7 chỗ</string>
+    <string name="type_caro_airport">Xe sân bay</string>
+
+    <string name="cancel">Huỷ</string>
+    <string name="done">Xong</string>
+    <string name="title_address_source">Điểm đến</string>
+    <string name="message_get_address_error">Bạn chưa lấy được địa chỉ</string>
+
+    <string name="message_searching_driver">Đang tìm tài xế gần bạn..</string>
+
+    <string name="payment_title">Thanh toán</string>
+
+    <string name="time_countdown_format_comming"><![CDATA[Còn <font color=\"#8b37fe\">%d phút</font> sẽ tới]]></string>
+    <string name="time_countdown_format_waiting"><![CDATA[<font color=\"#ff00cd\">Khởi hành 4 phút nữa</font>]]></string>
+    <string name="time_countdown_format_moving"><![CDATA[Đến nơi lúc <font color=\"#8b37fe\">%s</font>]]></string>
+
+    <string name="menu_bottom_sheet_change_pickup">Thay đổi điểm đón</string>
+    <string name="menu_bottom_sheet_change_dropoff">Thay đổi điểm đến</string>
+    <string name="menu_bottom_sheet_add_dropoff">Thêm điểm dừng</string>
+    <string name="menu_bottom_sheet_cancel">Huỷ chuyến</string>
+    <string name="menu_bottom_sheet_finish">Hoàn thành</string>
+    <string name="menu_bottom_sheet_close">Đóng</string>
+
+    <string name="rating_message">Vui lòng đánh giá dịch vụ của chúng tôi</string>
+    <string name="rating_feedback">Phản hồi</string>
+    <string name="rating_feedback_hint">Viết phản hồi của bạn</string>
+
+    <string name="menu_profile_notification">Thông báo</string>
+    <string name="menu_profile_card_promotion">Thẻ khuyến mại</string>
+    <string name="menu_profile_history">Lịch sử</string>
+    <string name="menu_profile_payment">Thanh toán</string>
+    <string name="menu_profile_contact_sos">Liên hệ khẩn cấp</string>
+    <string name="menu_profile_support">Hỗ trợ - Khiếu nại</string>
+    <string name="menu_profile_pick_airport">Đặt xe sân bay</string>
+
+    <string name="menu_become_driver">Tài xế Caro</string>
+    <string name="menu_version_app">Phiên bản %s</string>
+
+    <!-- favourite -->
+    <string name="edit_favourite">Chỉnh sửa</string>
+    <string name="edit_favourite_done">Xong</string>
+    <string name="favourite_title">Điểm ưa thích</string>
+    <string name="favourite_add">+ Thêm điểm ưa thích</string>
+    <string name="favourite_home">Nhà riêng</string>
+    <string name="favourite_company">Cơ quan</string>
+    <string name="favourite_message">Nhập địa điểm bạn muốn lưu</string>
+    <string name="favourite_btn_add">Thêm điểm ưa thích</string>
+    <string name="message_empty_error">Bạn chưa nhập đủ thông tin</string>
+    <string name="message_cant_delete_favourite">Bạn không thể xoá điểm này</string>
+
+    <!-- promotion -->
+    <string name="promotion_card">Thẻ khuyến mại</string>
+    <string name="promotion_card_des">Thẻ khuyến mại giúp bạn có những chuyến đi dễ dàng hơn.</string>
+
+    <!-- rating -->
+    <string name="rating_booking_succes">Đánh giá tài xế thành công.</string>
+    <string name="rating_booking_star_empty">Bạn chưa nhấp số sao</string>
+
+    <string name="message_source_empty">Xin lỗi, Bạn cần lấy vị trí hiện tại của mình.</string>
+    <string name="message_service_not_avaiable">Xin lỗi, tính năng đang cập nhật.</string>
+    <string name="message_promo_not_destination">Bạn chưa nhập điểm đến</string>
+
+    <string name="message_cancel_booking_success">Bạn đã huỷ chuyến thành công.</string>
+    <string name="message_find_driver_error">Xin lỗi, Không tìm thấy tài xế.</string>
+    <string name="message_driver_cancel_booking">Xin lỗi , tài xế đã huỷ chuyến.</string>
+
+    <string name="message_booking_price_empty">Xin lỗi, hệ thống chưa lấy được giá</string>
+
+    <string name="booking_price_title">Cước phí</string>
+    <string name="booking_promo_title">Khuyến mại</string>
+    <string name="expire_date">Hạn sử dụng</string>
+
+    <string name="user_total_booking">Tổng cuốc đặt</string>
+    <string name="user_total_distance">Tổng số Km</string>
+    <string name="user_rating">Đánh giá</string>
+
+    <string name="logout">Đăng xuất</string>
+    <string name="info_user_title">Thông tin cá nhân</string>
+    <string name="info_time_join_format">Tham gia: %s</string>
+
+    <string name="message_validate">Đã xác thực</string>
+    <string name="message_not_validate">Chưa xác thực</string>
+
+    <string name="change_username_title">Đổi tên</string>
+    <string name="update_confirm">Lưu</string>
+
+    <string name="first_name">Họ</string>
+    <string name="first_name_hint">Nhập họ</string>
+    <string name="email_hint">Nhập email</string>
+    <string name="last_name">Tên</string>
+    <string name="last_name_hint">Nhập tên</string>
+    <string name="email_title">Hòm thư</string>
+
+    <string name="firt_name_empty">Bạn chưa nhập họ</string>
+    <string name="email_empty">Bạn chưa nhập email</string>
+    <string name="phone_empty">Bạn chưa nhập số điện thoại</string>
+    <string name="last_name_empty">Bạn chưa nhập tên</string>
+    <string name="email_format_error">Bạn nhập email không đúng.</string>
+    <string name="update_username_success">Cập nhật thành công</string>
+
+    <string name="update_phone_title">Cập nhật số điện thoại của bạn</string>
+    <string name="update_phone_des">Chúng tôi sẽ gửi mã xác thực tới số điện thoại của bạn</string>
+
+    <string name="btn_continue">Tiếp tục</string>
+    <string name="acount_kit_phone_not_invail">Số điện thoại xác minh không phải số đăng ký</string>
+
+    <string name="note_for_dirver">Ghi chú cho tài xế</string>
+    <string name="note_driver_hint">Nhập ghi chú cho tài xế</string>
+    <string name="btn_confirm">Xác nhận</string>
+
+    <string name="message_promo_empty">Hiện tại, bạn không có mã khuyến mại nào.</string>
+    <string name="btn_use">SỬ DỤNG</string>
+    <string name="btn_cancel">HUỶ</string>
+    <string name="btn_skip">Bỏ qua</string>
+
+    <!-- history -->
+    <string name="history_title">Lịch sử</string>
+    <string name="history_empty_title">Không có lịch sử chuyến đi nào</string>
+    <string name="history_empty_des">Hãy bắt đầu bằng cuốc đi đầu tiên hôm nay bằng cách ấn vào nút "Vẫy xe" nhanh!</string>
+    <string name="history_status_cancel">Đã huỷ</string>
+    <string name="history_status_finish">Ưu đãi</string>
+    <string name="history_item_time_format"><![CDATA[<b>%s,</b> %s]]></string>
+    <string name="history_address_empty">Chưa có địa chỉ</string>
+
+    <string name="history_booking_distance">Khoảng cách(km)</string>
+    <string name="history_booking_time_wait">Thời gian chờ(phút)</string>
+    <string name="history_booking_time_route">Thời gian(phút)</string>
+    <string name="hitory_booking_price_title">Giá cước</string>
+    <string name="hitory_booking_cancel">Cuốc xe đã được huỷ</string>
+    <string name="hitory_btn_contact_support">Liên hệ hỗ trợ</string>
+
+    <string name="detail_text">Chi tiết</string>
+    <string name="collapse_text">Rút gọn</string>
+
+    <string name="btn_history_report">Báo cáo sự cố</string>
+    <string name="btn_history_support">Liên hệ hỗ trợ</string>
+
+    <string name="rating_des_5_star">Hoàn hảo!</string>
+    <string name="rating_des_other_star">Gần như hoàn hảo!</string>
+    <string name="rating_option_des_5_star">Hãy cho tài xế biết ý kiến của bạn!</string>
+    <string name="rating_option_des_other_star">Lý do chuyến đi không được đánh giá cao</string>
+
+    <string name="rating_full_star_suggest_des_1">Tài xế nhiệt tình</string>
+    <string name="rating_full_star_suggest_des_2">Tài xế rất giỏi tìm đường</string>
+    <string name="rating_full_star_suggest_des_3">Tài xế rất thân thiện</string>
+    <string name="rating_full_star_suggest_des_4">Sạch sẽ và thoải mái</string>
+    <string name="rating_full_star_suggest_des_5">Bật nhạc rất hay</string>
+    <string name="rating_full_star_suggest_des_6">An toàn</string>
+    <string name="rating_full_star_suggest_des_7">Lái xe tuyệt vời</string>
+    <string name="rating_full_star_suggest_des_8">Chiếc ô tô thật \"ngầu\"</string>
+    <string name="rating_full_star_suggest_des_9">Mọi thứ hoàn hảo</string>
+
+    <string name="rating_star_suggest_des_1">Thái độ của tài xế</string>
+    <string name="rating_star_suggest_des_2">Kỹ năng lái xe</string>
+    <string name="rating_star_suggest_des_3">Chất lượng xe</string>
+    <string name="rating_star_suggest_des_4">Quá nhiều phí</string>
+    <string name="rating_star_suggest_des_5">An toàn khác</string>
+    <string name="rating_star_suggest_des_6">Đón chậm</string>
+    <string name="rating_star_suggest_des_7">Di chuyển lòng vòng xa</string>
+    <string name="rating_star_suggest_des_8">Lý do khác</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
+</resources>
