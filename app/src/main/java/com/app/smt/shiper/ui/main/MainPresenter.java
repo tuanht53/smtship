@@ -1,8 +1,7 @@
 package com.app.smt.shiper.ui.main;
 
 import com.app.smt.shiper.data.DataManager;
-import com.app.smt.shiper.data.model.fcm.FcmTokenRequest;
-import com.app.smt.shiper.data.model.fcm.FcmTokenResponse;
+import com.app.smt.shiper.data.model.user.UserProfile;
 import com.app.smt.shiper.di.ConfigPersistent;
 import com.app.smt.shiper.ui.base.BasePresenter;
 import com.app.smt.shiper.util.AppLogger;
@@ -46,6 +45,10 @@ public class MainPresenter extends BasePresenter<MainMvpView> {
     }
 
     public void syncTokenFirebase() {
+        final UserProfile userProfile = getDataManager().getUserProfile();
+        if (userProfile == null) {
+            return;
+        }
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
                     @Override
@@ -58,21 +61,19 @@ public class MainPresenter extends BasePresenter<MainMvpView> {
                         // Get new Instance ID token
                         String token = task.getResult().getToken();
 
-                        FcmTokenRequest fcmTokenRequest = new FcmTokenRequest(token);
+                        userProfile.setFcmDeviceId(token);
                         RxUtil.dispose(mDisposable);
-                        getDataManager().syncRegistrationFcmToken(fcmTokenRequest)
+                        getDataManager().apiUpdateUserProfile(userProfile)
                                 .subscribeOn(Schedulers.io())
-                                .subscribe(new Observer<FcmTokenResponse>() {
+                                .subscribe(new Observer<String>() {
                                     @Override
                                     public void onSubscribe(@NonNull Disposable d) {
                                         mDisposable = d;
                                     }
 
                                     @Override
-                                    public void onNext(@NonNull FcmTokenResponse response) {
-                                        if (response != null) {
-                                            getDataManager().setJwtNotification(response.getJwt_notification());
-                                        }
+                                    public void onNext(@NonNull String response) {
+
                                     }
 
                                     @Override

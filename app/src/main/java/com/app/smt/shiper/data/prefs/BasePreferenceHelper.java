@@ -237,7 +237,7 @@ abstract public class BasePreferenceHelper {
                 M customObject = gson.fromJson(jsonData, classOfModelObject);
                 return customObject;
             } catch (ClassCastException cce) {
-                Log.d("MobileAmway", "Cannot convert string obtained from prefs into collection of type " +
+                Log.d("Mobile", "Cannot convert string obtained from prefs into collection of type " +
                         classOfModelObject.getName() + "\n" + cce.getMessage());
             }
         }

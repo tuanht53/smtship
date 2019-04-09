@@ -114,6 +114,7 @@ public class BasePresenter<T extends MvpView> implements Presenter<T> {
     @Override
     public void setUserAsLoggedOut() {
         mDataManager.clearUser();
+
     }
 }
 

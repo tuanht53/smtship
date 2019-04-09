@@ -2,10 +2,9 @@ package com.app.smt.shiper.data;
 
 import com.app.smt.shiper.data.db.DatabaseHelper;
 import com.app.smt.shiper.data.db.model.User;
-import com.app.smt.shiper.data.model.TokenRequest;
-import com.app.smt.shiper.data.model.TokenResponse;
-import com.app.smt.shiper.data.model.fcm.FcmTokenRequest;
-import com.app.smt.shiper.data.model.fcm.FcmTokenResponse;
+import com.app.smt.shiper.data.model.DataResponse;
+import com.app.smt.shiper.data.model.login.LoginRequest;
+import com.app.smt.shiper.data.model.login.LoginResponse;
 import com.app.smt.shiper.data.model.user.UserProfile;
 import com.app.smt.shiper.data.network.ApiHelper;
 import com.app.smt.shiper.data.prefs.PreferencesHelper;
@@ -51,16 +50,16 @@ public class DataManager {
         return mPreferencesHelper.getAccessToken();
     }
 
+    public void setUserProfile(UserProfile userProfile) {
+        mPreferencesHelper.setUserProfile(userProfile);
+    }
+
+    public UserProfile getUserProfile() {
+        return mPreferencesHelper.getUserProfile();
+    }
+
     private String getAuthorization() {
         return mPreferencesHelper.getAccessToken();
-    }
-
-    public String getJwtNotification() {
-        return mPreferencesHelper.getJwtNotification();
-    }
-
-    public void setJwtNotification(String token) {
-        mPreferencesHelper.setJwtNotification(token);
     }
 
     public void setLastLocation(LatLng location) {
@@ -87,14 +86,6 @@ public class DataManager {
         return mPreferencesHelper.getNotificationBookingID();
     }
 
-    public void setCountPromotion(int count) {
-        mPreferencesHelper.setCountPromotion(count);
-    }
-
-    public int getCountPromotion() {
-        return mPreferencesHelper.getCountPromotion();
-    }
-
     public Observable<Boolean> insertUser(User user) {
         return mDatabaseHelper.insertUser(user);
     }
@@ -103,24 +94,20 @@ public class DataManager {
         return mDatabaseHelper.getAllUsers();
     }
 
-    public Observable<TokenResponse> getTokenUser(TokenRequest tokenRequest) {
-        return mApiHelper.getTokenUser(tokenRequest);
+    public Observable<LoginResponse> apiLogin(LoginRequest loginRequest) {
+        return mApiHelper.apiLogin(loginRequest);
     }
 
-    public Observable<UserProfile> apiGetUserProfile() {
-        return mApiHelper.apiGetUserProfile(getAuthorization());
+    public Observable<DataResponse<UserProfile>> apiGetUserProfile(String userName) {
+        return mApiHelper.apiGetUserProfile(getAuthorization(), userName);
     }
 
-    public Observable<UserProfile> apiUpdateUserProfile(UserProfile userProfile) {
+    public Observable<String> apiUpdateUserProfile(UserProfile userProfile) {
         return mApiHelper.apiUpdateUserProfile(getAuthorization(), userProfile);
     }
 
     public Observable<UserProfile> apiUploadAvatar(@Part MultipartBody.Part file) {
         return mApiHelper.apiUploadAvatar(getAuthorization(), file);
-    }
-
-    public Observable<FcmTokenResponse> syncRegistrationFcmToken(FcmTokenRequest fcmTokenRequest) {
-        return mApiHelper.syncRegistrationFcmToken(getAuthorization(), fcmTokenRequest);
     }
 
 }

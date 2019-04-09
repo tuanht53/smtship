@@ -13,10 +13,6 @@
         android:title="@string/title_dashboard" />
 
     <item
-        android:id="@+id/ware_caro"
-        android:title="@string/title_dashboard" />
-
-    <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_menu_promotion"
         android:title="" />

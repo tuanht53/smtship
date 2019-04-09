@@ -2,6 +2,7 @@ package com.app.smt.shiper.data.prefs;
 
 import android.content.Context;
 
+import com.app.smt.shiper.data.model.user.UserProfile;
 import com.app.smt.shiper.di.ApplicationContext;
 import com.app.smt.shiper.util.AppConstants;
 import com.google.android.gms.maps.model.LatLng;
@@ -12,9 +13,11 @@ import javax.inject.Singleton;
 @Singleton
 public class PreferencesHelper extends BasePreferenceHelper {
 
-    private static final String PREF_FILE_NAME = "android_caro_pref_file";
+    private static final String PREF_FILE_NAME = "android_smt_pref_file";
 
     private static final String PREF_KEY_ACCESS_TOKEN = "PREF_KEY_ACCESS_TOKEN";
+
+    private static final String PREF_KEY_USER_PROFILE = "PREF_KEY_USER_PROFILE";
 
     private static final String PREF_KEY_LAST_LOCATION_LAT = "PREF_KEY_LAST_LOCATION_LAT";
 
@@ -24,9 +27,6 @@ public class PreferencesHelper extends BasePreferenceHelper {
 
     private static final String PREF_KEY_NOTIFICATION_MODEL_ID = "PREF_KEY_NOTIFICATION_MODEL_ID";
 
-    private static final String PREF_KEY_COUNT_PROMO = "PREF_KEY_COUNT_PROMO";
-
-    private static final String PREF_KEY_JWT_NOTIFICATION = "PREF_KEY_JWT_NOTIFICATION";
 
     @Inject
     public PreferencesHelper(@ApplicationContext Context context) {
@@ -46,12 +46,12 @@ public class PreferencesHelper extends BasePreferenceHelper {
         put(PREF_KEY_ACCESS_TOKEN, accessToken);
     }
 
-    public String getJwtNotification() {
-        return getString(PREF_KEY_JWT_NOTIFICATION, null);
+    public void setUserProfile(UserProfile userProfile) {
+        setObject(PREF_KEY_USER_PROFILE, userProfile);
     }
 
-    public void setJwtNotification(String token) {
-        put(PREF_KEY_JWT_NOTIFICATION, token);
+    public UserProfile getUserProfile() {
+        return  getObject(PREF_KEY_USER_PROFILE, UserProfile.class);
     }
 
     public void setLastLocation(LatLng location) {
@@ -79,14 +79,6 @@ public class PreferencesHelper extends BasePreferenceHelper {
 
     public String getNotificationBookingID() {
         return getString(PREF_KEY_NOTIFICATION_MODEL_ID, "");
-    }
-
-    public void setCountPromotion(int count) {
-        put(PREF_KEY_COUNT_PROMO, count);
-    }
-
-    public int getCountPromotion() {
-        return getInt(PREF_KEY_COUNT_PROMO, 0);
     }
 
 }

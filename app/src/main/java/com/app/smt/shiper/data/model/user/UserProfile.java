@@ -1,126 +1,96 @@
 package com.app.smt.shiper.data.model.user;
 
-import java.io.Serializable;
+import com.app.smt.shiper.data.prefs.ModelPreference;
 
-public class UserProfile implements Serializable {
+public class UserProfile implements ModelPreference {
 
-    private String uid;
+    private String txtId;
 
-    private long created_at;
+    private String userName;
 
-    private long upadted_at;
+    private String fullName;
 
-    private String status;
+    private int status;
 
-    private String email;
+    private AddressInfo addressInfo;
 
-    private String phone;
+    private String fcmDeviceId;
 
-    private String name;
+    private boolean isAdmin;
 
-    private boolean email_validate;
+    private long createDate;
 
-    private String avatar;
+    private long updateDate;
 
-    private int booking_total;
-
-    private float distance_total;
-
-    private float rating;
-
-    public String getUid() {
-        return uid;
+    public String getTxtId() {
+        return txtId;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setTxtId(String txtId) {
+        this.txtId = txtId;
     }
 
-    public long getCreated_at() {
-        return created_at;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setCreated_at(long created_at) {
-        this.created_at = created_at;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public long getUpadted_at() {
-        return upadted_at;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setUpadted_at(long upadted_at) {
-        this.upadted_at = upadted_at;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
-    public String getEmail() {
-        return email;
+    public AddressInfo getAddressInfo() {
+        return addressInfo;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setAddressInfo(AddressInfo addressInfo) {
+        this.addressInfo = addressInfo;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getFcmDeviceId() {
+        return fcmDeviceId;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setFcmDeviceId(String fcmDeviceId) {
+        this.fcmDeviceId = fcmDeviceId;
     }
 
-    public String getName() {
-        return name;
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
-    public boolean isEmail_validate() {
-        return email_validate;
+    public long getCreateDate() {
+        return createDate;
     }
 
-    public void setEmail_validate(boolean email_validate) {
-        this.email_validate = email_validate;
+    public void setCreateDate(long createDate) {
+        this.createDate = createDate;
     }
 
-    public String getAvatar() {
-        return avatar;
+    public long getUpdateDate() {
+        return updateDate;
     }
 
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
-    public int getBooking_total() {
-        return booking_total;
-    }
-
-    public void setBooking_total(int booking_total) {
-        this.booking_total = booking_total;
-    }
-
-    public float getDistance_total() {
-        return distance_total;
-    }
-
-    public void setDistance_total(float distance_total) {
-        this.distance_total = distance_total;
-    }
-
-    public float getRating() {
-        return rating;
-    }
-
-    public void setRating(float rating) {
-        this.rating = rating;
+    public void setUpdateDate(long updateDate) {
+        this.updateDate = updateDate;
     }
 }

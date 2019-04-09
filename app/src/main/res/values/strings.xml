@@ -262,14 +262,14 @@
     <string name="rating_star_suggest_des_8">Lý do khác</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="prompt_email">Số điện thoại</string>
+    <string name="prompt_password">Mật khẩu</string>
+    <string name="action_sign_in">Đăng nhập</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_invalid_phone">Số điện thoại của bạn không đúng</string>
+    <string name="error_invalid_password">Mật khẩu của bạn quá ngắn</string>
     <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
+    <string name="error_field_required">Bạn chưa nhập số điện thoại</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>

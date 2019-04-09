@@ -1,11 +1,8 @@
 package com.app.smt.shiper.di.module;
 
 import android.app.Application;
+
 import com.app.smt.shiper.BuildConfig;
-import com.app.smt.shiper.util.MyGsonTypeAdapterFactory;
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -30,13 +27,12 @@ public class NetModule {
     @Provides
     @Singleton
     @Named("smt_retrofit")
-    Retrofit provideCaroRetrofit(OkHttpClient okHttpClient, Gson gson) {
-
+    Retrofit provideCaroRetrofit(OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .baseUrl(BuildConfig.BASE_URL)
                 .client(okHttpClient)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
 
@@ -51,8 +47,6 @@ public class NetModule {
     @Provides
     @Singleton
     OkHttpClient provideOkHttpClient(Cache cache, HttpLoggingInterceptor httpLoggingInterceptor, Interceptor header) {
-
-
         return new OkHttpClient.Builder()
                 .addInterceptor(header)
                 .addInterceptor(httpLoggingInterceptor)
@@ -60,17 +54,6 @@ public class NetModule {
                 .readTimeout(120, TimeUnit.SECONDS)
                 .cache(cache)
                 .build();
-    }
-
-    @Provides
-    @Singleton
-    Gson provideGson() {
-        return new GsonBuilder()
-                .setLenient()
-                .registerTypeAdapterFactory(MyGsonTypeAdapterFactory.create())
-                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-                .create();
     }
 
     @Provides
@@ -89,7 +72,8 @@ public class NetModule {
             public Response intercept(Interceptor.Chain chain) throws IOException {
                 Request original = chain.request();
                 Request request = original.newBuilder()
-                        .header("Accept", "application/json")
+                        .header("Content-Type", "application/json")
+                        .header("X-Api-Key", "AbCdEfGhIjK4")
                         .build();
 
                 return chain.proceed(request);

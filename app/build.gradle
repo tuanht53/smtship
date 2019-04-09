@@ -29,8 +29,8 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
-            buildConfigField("String", "URL_AVATAR", "\"https://uat.carotech.info/\"")
-            buildConfigField("String", "BASE_URL", "\"https://uat.carotech.info/\"")
+            buildConfigField("String", "URL_AVATAR", "\"http://112.78.3.151:9000/\"")
+            buildConfigField("String", "BASE_URL", "\"http://112.78.3.151:9000/\"")
             buildConfigField("String", "GOOGLE_MAP_URL", "\"https://maps.googleapis.com/maps/\"")
             buildConfigField("String", "SOCKET_URL", "\"https://uat.carotech.info\"")
 
@@ -42,8 +42,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            buildConfigField("String", "URL_AVATAR", "\"https://uat.carotech.info/\"")
-            buildConfigField("String", "BASE_URL", "\"https://uat.carotech.info/\"")
+            buildConfigField("String", "URL_AVATAR", "\"http://112.78.3.151:9000/\"")
+            buildConfigField("String", "BASE_URL", "\"http://112.78.3.151:9000/\"")
             buildConfigField("String", "GOOGLE_MAP_URL", "\"https://maps.googleapis.com/maps/\"")
             buildConfigField("String", "SOCKET_URL", "\"https://uat.carotech.info\"")
 

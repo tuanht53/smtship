@@ -29,8 +29,7 @@ import android.support.v4.app.NotificationCompat;
 import com.app.smt.shiper.MvpApplication;
 import com.app.smt.shiper.R;
 import com.app.smt.shiper.data.DataManager;
-import com.app.smt.shiper.data.model.fcm.FcmTokenRequest;
-import com.app.smt.shiper.data.model.fcm.FcmTokenResponse;
+import com.app.smt.shiper.data.model.user.UserProfile;
 import com.app.smt.shiper.ui.main.MainActivity;
 import com.app.smt.shiper.util.AppLogger;
 import com.app.smt.shiper.util.RxUtil;
@@ -138,18 +137,22 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      */
     private void sendRegistrationToServer(String token) {
         // TODO: Implement this method to send token to your app server.
-        FcmTokenRequest fcmTokenRequest = new FcmTokenRequest(token);
+        UserProfile userProfile = mDataManager.getUserProfile();
+        if (userProfile == null) {
+            return;
+        }
+        userProfile.setFcmDeviceId(token);
         RxUtil.dispose(mDisposable);
-        mDataManager.syncRegistrationFcmToken(fcmTokenRequest)
+        mDataManager.apiUpdateUserProfile(userProfile)
                 .subscribeOn(Schedulers.io())
-                .subscribe(new Observer<FcmTokenResponse>() {
+                .subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
                         mDisposable = d;
                     }
 
                     @Override
-                    public void onNext(@NonNull FcmTokenResponse response) {
+                    public void onNext(@NonNull String response) {
                     }
 
                     @Override

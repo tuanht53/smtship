@@ -45,7 +45,7 @@ ext {
     playServicesVersion = '16.0.0'
 
     //firebase
-    firebaseVersion = '17.3.4'
+    firebaseVersion = '17.5.0'
 
     calligraphyVersion = '2.3.0'
     glideVersion = '4.9.0'

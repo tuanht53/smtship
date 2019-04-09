@@ -10,13 +10,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.app.smt.shiper.R;
+import com.app.smt.shiper.data.model.login.LoginRequest;
 import com.app.smt.shiper.ui.base.BaseActivity;
 import com.app.smt.shiper.ui.main.MainActivity;
+import com.app.smt.shiper.util.SecurityUtil;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity implements LoginMvpView {
 
@@ -25,8 +28,8 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
     @Inject
     LoginPresenter mPresenter;
 
-    @BindView(R.id.email)
-    EditText mEmailView;
+    @BindView(R.id.phone)
+    EditText mPhoneView;
 
     @BindView(R.id.password)
     EditText mPasswordView;
@@ -58,31 +61,11 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
                 return false;
             }
         });
-
-        // Reset errors.
-        mEmailView.setError(null);
-        mPasswordView.setError(null);
-
-        // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
-
-        // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
-        }
-
-        // Check for a valid email address.
-        if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
-        } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
-        }
     }
 
-    private boolean isEmailValid(String email) {
+    private boolean isPhoneValid(String phone) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+        return phone.contains("0");
     }
 
     private boolean isPasswordValid(String password) {
@@ -103,4 +86,41 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
         finish();
     }
 
+    @OnClick(R.id.btn_login)
+    public void onClickBtnLogin() {
+        // Reset errors.
+        mPhoneView.setError(null);
+        mPasswordView.setError(null);
+
+        // Store values at the time of the login attempt.
+        String phone = mPhoneView.getText().toString();
+        String password = mPasswordView.getText().toString();
+
+        // Check for a valid password, if the user entered one.
+        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+            mPasswordView.setError(getString(R.string.error_invalid_password));
+        }
+
+        // Check for a valid email address.
+        if (TextUtils.isEmpty(phone)) {
+            mPhoneView.setError(getString(R.string.error_field_required));
+        } else if (!isPhoneValid(phone)) {
+            mPhoneView.setError(getString(R.string.error_invalid_phone));
+        }
+
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUserCode(phone);
+        loginRequest.setPassword(SecurityUtil.SHA1(password));
+        mPresenter.apiLogin(loginRequest);
+    }
+
+    @Override
+    public void loginSuccess() {
+        mPresenter.apiGetUserInfo(mPhoneView.getText().toString());
+    }
+
+    @Override
+    public void getUserInfoSuccess() {
+        openMainActivity();
+    }
 }
