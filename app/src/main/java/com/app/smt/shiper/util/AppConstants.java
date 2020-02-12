@@ -46,10 +46,22 @@ public final class AppConstants {
 
     public static final double LONG_DEFAULT = 105.8026629;
 
+    // define
+    public static final String CHANGE_MONEY = "CHANGE_MONEY";
+
     // define booking type
     public static final String BOOKING_TYPE_WAVING = "WAVING";
 
     public static final String BOOKING_TYPE_DESTINATION_PICKING = "DESTINATION_PICKING";
+
+    // define EventBus Event
+    public static final String EVENTBUS_LIST_ORDER_RECEIVER = "EVENTBUS_LIST_ORDER_RECEIVER";
+
+    public static final String EVENTBUS_LIST_ORDER_FAIL = "EVENTBUS_LIST_ORDER_FAIL";
+
+    public static final String EVENTBUS_LIST_ORDER_DELIVERING = "EVENTBUS_LIST_ORDER_DELIVERING";
+
+    public static final String EVENTBUS_LIST_ORDER_WAITING_CONFIRM = "EVENTBUS_LIST_ORDER_WAITING_CONFIRM";
 
     //define notification type event
     public static final String EVENT_CUSTOMER_BOOKING_SUCCESS = "EVENT_CUSTOMER_BOOKING_SUCCESS";
@@ -66,27 +78,37 @@ public final class AppConstants {
 
     public static final String EVENT_BOOKING_UPDATE_DESTINATIONS = "EVENT_UPDATE_DESTINATIONS";
 
-    // define booking status
-    public static final String BOOKING_STATUS_WAITING = "WAITING";
+    // define order status
+    public static final String ORDER_WORKFLOW_DRAFT = "DRAFT";
 
-    public static final String BOOKING_STATUS_DRIVER_COMMING = "DRIVER_COMMING";
+    public static final String ORDER_WORKFLOW_WAITING_SHIPPER_TAKE_PRODUCT = "WAITING_SHIPPER_TAKE_PRODUCT";
 
-    public static final String BOOKING_STATUS_DRIVER_WAITING = "DRIVER_WAITING";
+    public static final String ORDER_WORKFLOW_SHIPPER_MOVING_TAKE_PRODUCT = "SHIPPER_MOVING_TAKE_PRODUCT";
 
-    public static final String BOOKING_STATUS_DRIVER_CANCELED = "DRIVER_CANCELED";
+    public static final String ORDER_WORKFLOW_CONFIRM_MOVING_STOCK = "CONFIRM_MOVING_STOCK";
 
-    public static final String BOOKING_STATUS_CUSTOMER_CANCELED = "CUSTOMER_CANCELED";
+    public static final String ORDER_WORKFLOW_IN_STOCK = "IN_STOCK";
 
-    public static final String BOOKING_STATUS_CUSTOMER_TIMEOUT = "TIMEOUT";
+    public static final String ORDER_WORKFLOW_WAITING_SHIPPER_CONFIRM_ORDER = "WAITING_SHIPPER_CONFIRM_ORDER";
 
-    public static final String BOOKING_STATUS_MOVING = "MOVING";
+    public static final String ORDER_WORKFLOW_DELIVERING = "DELIVERING";
 
-    public static final String BOOKING_STATUS_FINISHED = "FINISHED";
+    public static final String ORDER_WORKFLOW_DELIVERY_FAIL = "DELIVERY_FAIL";
+
+    public static final String ORDER_WORKFLOW_DELIVERY_CANCEL = "CANCEL";
+
+    public static final String ORDER_WORKFLOW_DELIVERY_DONE = "DONE";
 
     // define status promotion
     public static final String PROMOTION_STATUS_ENABLE = "ENABLE";
 
     public static final String PROMOTION_STATUS_DISABLE = "DISABLE";
+
+    // define priority
+    public static final int PRIORITY_LOW = 0;   // Thap
+    public static final int PRIORITY_NORMAL = 1;   // Trung binh
+    public static final int PRIORITY_HIGH = 2;   // Cao
+    public static final int PRIORITY_HIGHEST = 3;   // Rat cao
 
     private AppConstants() {
         // This utility class is not publicly instantiable

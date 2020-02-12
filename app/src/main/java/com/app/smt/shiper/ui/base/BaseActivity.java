@@ -3,6 +3,7 @@ package com.app.smt.shiper.ui.base;
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -177,7 +178,9 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
 
     @Override
     public void openActivityOnTokenExpire() {
-        startActivity(LoginActivity.getStartIntent(this));
+        Intent intent = LoginActivity.getStartIntent(this);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
         finish();
     }
 

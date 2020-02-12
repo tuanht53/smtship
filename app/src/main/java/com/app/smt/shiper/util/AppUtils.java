@@ -15,6 +15,7 @@
 
 package com.app.smt.shiper.util;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -27,6 +28,7 @@ import com.app.smt.shiper.R;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -96,4 +98,63 @@ public final class AppUtils {
         }
     }
 
+    public static long componentTimeToTimestampUTC(int year, int month, int day, int hour, int minute) {
+
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        c.set(Calendar.MONTH, month);
+        c.set(Calendar.DAY_OF_MONTH, day);
+        c.set(Calendar.HOUR_OF_DAY, hour);
+        c.set(Calendar.MINUTE, minute);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+
+        return (c.getTimeInMillis());
+    }
+
+    public static void callPhone(Activity mContext, String phone) {
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+        mContext.startActivity(intent);
+    }
+
+    /*public static ArrayList<com.app.smt.shiper.data.model.order.CallLog> getCallLog(Activity context, String phone) {
+        ArrayList<com.app.smt.shiper.data.model.order.CallLog> arrayList = new ArrayList<>();
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(context,
+                    new String[]{Manifest.permission.READ_CALL_LOG}, 1);
+            AppLogger.e("not permission call log ");
+            return arrayList;
+        } else {
+            Cursor cursor = context.getContentResolver().query(CallLog.Calls.CONTENT_URI,
+                    null, CallLog.Calls.NUMBER + " LIKE '%"+phone+"%'", null, CallLog.Calls.DATE + " DESC" + " LIMIT 3");
+            int number = cursor.getColumnIndex(CallLog.Calls.NUMBER);
+            int type = cursor.getColumnIndex(CallLog.Calls.TYPE);
+            int date = cursor.getColumnIndex(CallLog.Calls.DATE);
+            int duration = cursor.getColumnIndex(CallLog.Calls.DURATION);
+            while (cursor.moveToNext()) {
+                com.app.smt.shiper.data.model.order.CallLog log = new com.app.smt.shiper.data.model.order.CallLog();
+                String phNumber = cursor.getString(number);
+                String callType = cursor.getString(type);
+                String callDate = cursor.getString(date);
+                log.setId(callDate);
+                String callDuration = cursor.getString(duration);
+                int dircode = Integer.parseInt(callType);
+                switch (dircode) {
+                    case CallLog.Calls.OUTGOING_TYPE:
+                        log.setContent("Gọi khách hàng " + phNumber + " lúc " + getDateFromTimestamp(Long.valueOf(callDate), "HH:mm dd/MM/yyyy") + " thời gian " + callDuration + "s");
+                        break;
+                    case CallLog.Calls.INCOMING_TYPE:
+                        log.setContent("Khách hàng gọi shiper" + " lúc " + getDateFromTimestamp(Long.valueOf(callDate), "HH:mm dd/MM/yyyy") + " thời gian " + callDuration + "s");
+                        break;
+
+                    case CallLog.Calls.MISSED_TYPE:
+                        log.setContent("Khách hàng gọi nhỡ shiper" + " lúc " + getDateFromTimestamp(Long.valueOf(callDate), "HH:mm dd/MM/yyyy") + " thời gian " + callDuration + "s");
+                        break;
+                }
+                arrayList.add(log);
+            }
+            cursor.close();
+            return arrayList;
+        }
+    }*/
 }

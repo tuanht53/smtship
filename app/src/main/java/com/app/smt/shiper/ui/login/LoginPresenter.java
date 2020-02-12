@@ -86,6 +86,7 @@ public class LoginPresenter extends BasePresenter<LoginMvpView> {
                     @Override
                     public void onNext(@NonNull DataResponse<UserProfile> response) {
                         if (response != null) {
+                            getDataManager().setUserID(response.getData().getTxtId());
                             getDataManager().setUserProfile(response.getData());
                             getMvpView().getUserInfoSuccess();
                         }

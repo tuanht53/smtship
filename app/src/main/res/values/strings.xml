@@ -1,7 +1,8 @@
 <resources>
-    <string name="title_home">Trang chủ</string>
-    <string name="title_dashboard">Yêu </string>
-    <string name="title_notifications">Khuyến </string>
+    <string name="title_tab_order">Đơn hàng</string>
+    <string name="title_tab_notification">Thông báo</string>
+    <string name="title_tab_report">Báo cáo</string>
+    <string name="title_tab_user">Tài khoản</string>
 
     <!--    Permissions    -->
     <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
@@ -40,6 +41,17 @@
     <string name="nav_settings">Menu</string>
     <string name="nav_about_us">About Us</string>
 
+    <!--scan code-->
+    <string name="scan_code_title">Quét QR</string>
+    <string name="scan_code_status">Di chuyển camera đến vùng chứa mã QR để quét.</string>
+    <string name="scan_code_error">Không tìm thấy đơn hàng. Bạn vui lòng quét lại.</string>
+    <string name="scan_code_fail">Mã vạch không đúng. Bạn vui lòng quét lại.</string>
+
+    <!-- barcode-->
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+
     <!-- Toolbar titles when navigation menu item is selected -->
     <string-array name="nav_item_activity_titles">
         <item>Home</item>
@@ -48,6 +60,15 @@
         <item>Notifications</item>
         <item>Settings</item>
     </string-array>
+
+    <string name="select_time_report_title">Hôm nay</string>
+    <string name="select_time_report_week">Tuần này</string>
+    <string name="select_time_report_month">Tháng này</string>
+    <string name="select_time_report_custom">Tuỳ chọn</string>
+
+    <string name="menu_priority_normal">Bình thường</string>
+    <string name="menu_priority_high">Nhanh</string>
+    <string name="menu_priority_highest">Gấp</string>
 
     <string name="activity_title_about_us">About Us</string>
     <string name="activity_title_privacy_policy">Privacy Policy</string>
@@ -63,6 +84,36 @@
     <string name="empty_ribots">There aren\'t any ribots</string>
     <string name="error_loading_ribots">There was a problem loading the ribots</string>
     <string name="some_error">Some Error Occurred!</string>
+
+    <string name="select_store">Chọn cửa hàng</string>
+    <string name="store_empty">Hiện tại, không có cửa hàng nào có đơn.</string>
+    <string name="store_all_defaul">Tất cả</string>
+
+    <string name="tab_order_receiver">Đang nhận</string>
+    <string name="tab_order_delivering">Đang giao</string>
+    <string name="tab_order_delivery_fail">Thất bại</string>
+    <string name="tab_order_wait_confirm">Chờ xác nhận</string>
+
+    <string name="detail_order_title">Chi tiết đơn hàng</string>
+
+    <string name="order_note"><![CDATA[<b>Ghi chú:</b> %s]]></string>
+    <string name="order_content"><![CDATA[%s]]></string>
+    <string name="order_content_product" formatted="true"><b>%s</b> Số lượng: %d<br/></string>
+
+    <string name="message_phone_empty">Chưa có số điện thoại</string>
+
+    <!-- reason fail order -->
+    <string name="reason_fail_title">Lý do thất bại</string>
+    <string name="reason_fail_order_title">Lý do bạn không giao được hàng</string>
+    <string name="reason_fail_order_error">Bạn cần có lý do thất bại.</string>
+    <string name="reason_fail_order_1">Không liên lạc được người nhận</string>
+    <string name="reason_fail_order_2">Sai địa chỉ người nhận</string>
+    <string name="reason_fail_order_3">Người nhận từ chối nhận hàng</string>
+    <string name="reason_fail_order_4">Người nhận hẹn giao hàng thời điểm khác</string>
+    <string name="reason_fail_order_other">Lý do khác:</string>
+    <string name="reason_fail_order_hint">nhập lý do</string>
+
+    <string name="ok">OK</string>
 
     <!--play store-->
     <string name="app_google_play_store_link">"https://play.google.com/store/apps/details?id="</string>
@@ -103,6 +154,8 @@
     <string name="type_caro_7">Xe 7 chỗ</string>
     <string name="type_caro_airport">Xe sân bay</string>
 
+    <string name="close_app_confirm">Bạn có chắc chắn muốn thoát ứng dụng</string>
+    <string name="delivery_order_success_confirm">Bạn đã giao hàng thành công?</string>
     <string name="cancel">Huỷ</string>
     <string name="done">Xong</string>
     <string name="title_address_source">Điểm đến</string>
@@ -135,7 +188,7 @@
     <string name="menu_profile_support">Hỗ trợ - Khiếu nại</string>
     <string name="menu_profile_pick_airport">Đặt xe sân bay</string>
 
-    <string name="menu_become_driver">Tài xế Caro</string>
+    <string name="menu_become_driver">Tài xế</string>
     <string name="menu_version_app">Phiên bản %s</string>
 
     <!-- favourite -->
@@ -151,7 +204,8 @@
     <string name="message_cant_delete_favourite">Bạn không thể xoá điểm này</string>
 
     <!-- promotion -->
-    <string name="promotion_card">Thẻ khuyến mại</string>
+    <string name="btn_select">Chọn</string>
+    <string name="promotion_card">Chọn Ship Muốn Đổi</string>
     <string name="promotion_card_des">Thẻ khuyến mại giúp bạn có những chuyến đi dễ dàng hơn.</string>
 
     <!-- rating -->
@@ -185,6 +239,7 @@
 
     <string name="change_username_title">Đổi tên</string>
     <string name="update_confirm">Lưu</string>
+    <string name="status_title">Trạng Thái:</string>
 
     <string name="first_name">Họ</string>
     <string name="first_name_hint">Nhập họ</string>
@@ -210,14 +265,28 @@
     <string name="note_driver_hint">Nhập ghi chú cho tài xế</string>
     <string name="btn_confirm">Xác nhận</string>
 
-    <string name="message_promo_empty">Hiện tại, bạn không có mã khuyến mại nào.</string>
+    <string name="message_shiper_empty">Hiện tại, không có shipper nào.</string>
     <string name="btn_use">SỬ DỤNG</string>
     <string name="btn_cancel">HUỶ</string>
     <string name="btn_skip">Bỏ qua</string>
 
+    <string name="btn_order_delivering">Đi giao</string>
+    <string name="btn_order_move_stock">Về kho</string>
+    <string name="btn_order_swap_ship">Đổi ship</string>
+    <string name="btn_order_success">Thành công</string>
+    <string name="btn_order_fail">Thất bại</string>
+    <string name="btn_order_delevering_again">Giao lại</string>
+    <string name="btn_confirm_ok">Đồng ý</string>
+    <string name="btn_confirm_cancel">Từ chối</string>
+
+    <string name="confirm_status_money">Đổi giá</string>
+    <string name="confirm_status_ship">Đổi ship</string>
+
+    <string name="order_priority">Mức độ</string>
+
     <!-- history -->
     <string name="history_title">Lịch sử</string>
-    <string name="history_empty_title">Không có lịch sử chuyến đi nào</string>
+    <string name="history_empty_title">Không có đơn hàng</string>
     <string name="history_empty_des">Hãy bắt đầu bằng cuốc đi đầu tiên hôm nay bằng cách ấn vào nút "Vẫy xe" nhanh!</string>
     <string name="history_status_cancel">Đã huỷ</string>
     <string name="history_status_finish">Ưu đãi</string>

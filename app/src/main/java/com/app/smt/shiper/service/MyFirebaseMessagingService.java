@@ -31,10 +31,13 @@ import com.app.smt.shiper.R;
 import com.app.smt.shiper.data.DataManager;
 import com.app.smt.shiper.data.model.user.UserProfile;
 import com.app.smt.shiper.ui.main.MainActivity;
+import com.app.smt.shiper.util.AppConstants;
 import com.app.smt.shiper.util.AppLogger;
 import com.app.smt.shiper.util.RxUtil;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.Map;
 
@@ -102,6 +105,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             AppLogger.d("Message Notification Body: " + remoteMessage.getNotification().getBody());
             sendNotification(remoteMessage.getNotification().getBody(), "");
         }
+        EventBus.getDefault().post(AppConstants.EVENTBUS_LIST_ORDER_RECEIVER);
+        EventBus.getDefault().post(AppConstants.EVENTBUS_LIST_ORDER_DELIVERING);
+        EventBus.getDefault().post(AppConstants.EVENTBUS_LIST_ORDER_FAIL);
+        EventBus.getDefault().post(AppConstants.EVENTBUS_LIST_ORDER_WAITING_CONFIRM);
 
         // Also if you intend on generating your own notifications as a result of a received FCM
         // message, here is where that should be initiated. See sendNotification method below.

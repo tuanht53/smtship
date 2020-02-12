@@ -10,12 +10,15 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--<uses-permission android:name="android.permission.READ_CALL_LOG"/>-->
+
     <application
         android:name=".MvpApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
@@ -69,6 +72,18 @@
             android:name=".ui.policy.PrivacyPolicyActivity"
             android:label="@string/activity_title_privacy_policy"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.orderdetail.OrderDetailActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/detail_order_title"/>
+
+        <activity
+            android:name=".ui.qrcode.ScanActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/scan_code_title"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
         <activity android:name="com.facebook.accountkit.ui.AccountKitActivity" />
 

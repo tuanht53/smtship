@@ -1,6 +1,8 @@
 package com.app.smt.shiper.ui.base;
 
 
+import android.text.TextUtils;
+
 import com.app.smt.shiper.R;
 import com.app.smt.shiper.data.DataManager;
 import com.app.smt.shiper.data.model.ApiError;
@@ -96,8 +98,10 @@ public class BasePresenter<T extends MvpView> implements Presenter<T> {
                 switch (((HttpException) error).code()) {
                     case HttpsURLConnection.HTTP_UNAUTHORIZED:
                     case HttpsURLConnection.HTTP_FORBIDDEN:
-                        setUserAsLoggedOut();
-                        getMvpView().openActivityOnTokenExpire();
+                        if (!TextUtils.isEmpty(getDataManager().getAccessToken())) {
+                            setUserAsLoggedOut();
+                            getMvpView().openActivityOnTokenExpire();
+                        }
                     case HttpsURLConnection.HTTP_INTERNAL_ERROR:
                     case HttpsURLConnection.HTTP_NOT_FOUND:
                     default:

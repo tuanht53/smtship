@@ -17,6 +17,8 @@ public class PreferencesHelper extends BasePreferenceHelper {
 
     private static final String PREF_KEY_ACCESS_TOKEN = "PREF_KEY_ACCESS_TOKEN";
 
+    private static final String PREF_KEY_USER_ID = "PREF_KEY_USER_ID";
+
     private static final String PREF_KEY_USER_PROFILE = "PREF_KEY_USER_PROFILE";
 
     private static final String PREF_KEY_LAST_LOCATION_LAT = "PREF_KEY_LAST_LOCATION_LAT";
@@ -40,6 +42,14 @@ public class PreferencesHelper extends BasePreferenceHelper {
 
     public String getAccessToken() {
         return getString(PREF_KEY_ACCESS_TOKEN, null);
+    }
+
+    public void setUserID(String userID) {
+        put(PREF_KEY_USER_ID, userID);
+    }
+
+    public String getUserID() {
+        return getString(PREF_KEY_USER_ID, null);
     }
 
     public void setAccessToken(String accessToken) {

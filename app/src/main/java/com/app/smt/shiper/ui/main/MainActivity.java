@@ -1,10 +1,13 @@
 package com.app.smt.shiper.ui.main;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,10 +16,10 @@ import android.widget.Toast;
 
 import com.app.smt.shiper.R;
 import com.app.smt.shiper.ui.base.BaseActivity;
-import com.app.smt.shiper.ui.movie.MoviesFragment;
 import com.app.smt.shiper.ui.notification.NotificationsFragment;
-import com.app.smt.shiper.ui.photo.PhotosFragment;
-import com.app.smt.shiper.ui.setting.SettingsFragment;
+import com.app.smt.shiper.ui.order.OrderManagerFragment;
+import com.app.smt.shiper.ui.report.ReportFragment;
+import com.app.smt.shiper.ui.user.MenuUserFragment;
 import com.app.smt.shiper.util.AppLogger;
 import com.app.smt.shiper.util.dialog.DialogUtils;
 
@@ -57,7 +60,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         if (newFragment == null) {
-            showHomeMap();
+            showHome();
         }
 
         // [START handle_data_extras]
@@ -81,6 +84,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     }
 
     private void setup() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_CALL_LOG}, 1);
+        }
     }
 
     @Override
@@ -104,19 +111,19 @@ public class MainActivity extends BaseActivity implements MainMvpView {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     lastSelectedNavigationItem = R.id.navigation_home;
-                    showHomeMap();
+                    showHome();
                     return true;
-                case R.id.navigation_favourite:
-                    lastSelectedNavigationItem = R.id.navigation_favourite;
-                    showFavourite();
+                case R.id.navigation_notificaiton:
+                    lastSelectedNavigationItem = R.id.navigation_notificaiton;
+                    showNotification();
                     return true;
-                case R.id.navigation_notifications:
-                    lastSelectedNavigationItem = R.id.navigation_notifications;
-                    showPromotion();
+                case R.id.navigation_report:
+                    lastSelectedNavigationItem = R.id.navigation_report;
+                    showReport();
                     return true;
                 case R.id.navigation_profile:
                     lastSelectedNavigationItem = R.id.navigation_profile;
-                    showMenuProfile();
+                    showUser();
                     return true;
             }
 
@@ -124,24 +131,24 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         }
     };
 
-    public void showHomeMap() {
-        newFragment = SettingsFragment.newInstance("", "");
-        changeFragment(newFragment, SettingsFragment.TAG);
+    public void showHome() {
+        newFragment = OrderManagerFragment.newInstance();
+        changeFragment(newFragment, OrderManagerFragment.TAG);
     }
 
-    private void showPromotion() {
-        newFragment = MoviesFragment.newInstance("", "");
-        changeFragment(newFragment, MoviesFragment.TAG);
-    }
-
-    private void showMenuProfile() {
+    private void showNotification() {
         newFragment = NotificationsFragment.newInstance("", "");
         changeFragment(newFragment, NotificationsFragment.TAG);
     }
 
-    private void showFavourite() {
-        newFragment = PhotosFragment.newInstance("", "");
-        changeFragment(newFragment, PhotosFragment.TAG);
+    private void showReport() {
+        newFragment = ReportFragment.newInstance("","");
+        changeFragment(newFragment, ReportFragment.TAG);
+    }
+
+    private void showUser() {
+        newFragment = MenuUserFragment.newInstance();
+        changeFragment(newFragment, MenuUserFragment.TAG);
     }
 
     public void changeFragment(Fragment fragment, String tagFragmentName) {

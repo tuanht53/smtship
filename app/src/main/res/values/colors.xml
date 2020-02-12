@@ -20,6 +20,7 @@
     <color name="green">#3a97d3</color>
     <color name="color_bg_history">#f3f3f9</color>
 
+    <color name="red">#FF0000</color>
     <color name="blue_promo">#2c2a68</color>
     <color name="blue_des">#2b2a64</color>
     <color name="gray_promo">#aaaaaa</color>
@@ -32,5 +33,12 @@
     <color name="caro_blue_btn_150">#871cf8</color>
     <color name="caro_blue_btn_200">#8110f9</color>
 
+    <color name="caro_gray_btn_100">#aaaaaa</color>
+    <color name="caro_gray_btn_150">#999999</color>
+    <color name="caro_gray_btn_200">#999999</color>
+
     <color name="color_draw_route">#8b37fe</color>
+
+    <color name="scanner_line">#fff</color>
+
 </resources>

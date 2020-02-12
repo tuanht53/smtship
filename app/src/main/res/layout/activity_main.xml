@@ -16,8 +16,6 @@
         android:background="?android:attr/windowBackground"
         android:foreground="?attr/selectableItemBackground"
         app:itemBackground="@color/bgBottomNavigation"
-        app:itemTextColor="@android:color/white"
-        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/navigation" />
 
     <FrameLayout

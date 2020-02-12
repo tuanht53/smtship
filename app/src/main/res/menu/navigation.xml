@@ -5,20 +5,20 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_menu_home"
-        android:title="@string/title_home" />
+        android:title="@string/title_tab_order" />
 
     <item
-        android:id="@+id/navigation_favourite"
+        android:id="@+id/navigation_notificaiton"
         android:icon="@drawable/ic_menu_favorite"
-        android:title="@string/title_dashboard" />
+        android:title="@string/title_tab_notification" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_report"
         android:icon="@drawable/ic_menu_promotion"
-        android:title="" />
+        android:title="@string/title_tab_report" />
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_menu_profile"
-        android:title="@string/nav_settings" />
+        android:title="@string/title_tab_user" />
 
 </menu>
